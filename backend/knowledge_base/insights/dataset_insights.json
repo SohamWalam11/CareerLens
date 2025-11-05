@@ -1,0 +1,103 @@
+{
+  "dataset_version": "2025-11-01",
+  "total_records": 9000,
+  "insights": [
+    {
+      "category": "skill_frequency",
+      "data": {
+        "python": {
+          "count": 7200,
+          "percentage": 80.0,
+          "roles": ["Data Scientist", "ML Engineer", "Backend Engineer"]
+        },
+        "machine learning": {
+          "count": 4500,
+          "percentage": 50.0,
+          "roles": ["Data Scientist", "ML Engineer"]
+        },
+        "sql": {
+          "count": 6300,
+          "percentage": 70.0,
+          "roles": ["Data Analyst", "Data Scientist", "Backend Engineer"]
+        },
+        "deep learning": {
+          "count": 3600,
+          "percentage": 40.0,
+          "roles": ["ML Engineer", "Data Scientist", "AI Researcher"]
+        },
+        "statistics": {
+          "count": 5400,
+          "percentage": 60.0,
+          "roles": ["Data Scientist", "Data Analyst", "Statistician"]
+        }
+      }
+    },
+    {
+      "category": "transition_success_rate",
+      "data": {
+        "Data Analyst → Data Scientist": {
+          "observed_transitions": 523,
+          "avg_time_months": 14,
+          "success_rate": 0.72,
+          "common_skills_added": ["machine learning", "deep learning", "tensorflow"]
+        },
+        "Software Engineer → Data Scientist": {
+          "observed_transitions": 312,
+          "avg_time_months": 11,
+          "success_rate": 0.68,
+          "common_skills_added": ["statistics", "pandas", "data visualization"]
+        },
+        "Data Scientist → ML Engineer": {
+          "observed_transitions": 287,
+          "avg_time_months": 9,
+          "success_rate": 0.75,
+          "common_skills_added": ["kubernetes", "docker", "mlops"]
+        },
+        "Software Engineer → ML Engineer": {
+          "observed_transitions": 412,
+          "avg_time_months": 10,
+          "success_rate": 0.71,
+          "common_skills_added": ["machine learning", "tensorflow", "pytorch"]
+        }
+      }
+    },
+    {
+      "category": "role_demand",
+      "data": {
+        "Data Scientist": {
+          "centrality": 0.85,
+          "growth_trend": "high",
+          "avg_experience_years": 3.5
+        },
+        "ML Engineer": {
+          "centrality": 0.82,
+          "growth_trend": "very_high",
+          "avg_experience_years": 4.2
+        },
+        "Data Analyst": {
+          "centrality": 0.78,
+          "growth_trend": "moderate",
+          "avg_experience_years": 2.8
+        }
+      }
+    },
+    {
+      "category": "skill_transferability",
+      "data": {
+        "sql → spark": 0.65,
+        "python → r": 0.70,
+        "statistics → machine learning": 0.60,
+        "machine learning → deep learning": 0.75,
+        "tensorflow → pytorch": 0.85,
+        "react → vue": 0.80,
+        "java → kotlin": 0.75,
+        "aws → azure": 0.70
+      }
+    }
+  ],
+  "metadata": {
+    "last_updated": "2025-11-01",
+    "source": "CareerLens EDA pipeline",
+    "coverage": "Global tech roles, 2020-2025"
+  }
+}

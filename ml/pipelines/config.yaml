@@ -1,0 +1,47 @@
+models:
+  text_embedding:
+    name: sentence-transformers/all-MiniLM-L6-v2
+    dimension: 384
+    cache_dir: ml/artifacts/models
+
+graph:
+  dataset_prefix: karrierewege
+  person_col: person_id
+  role_col: job_title
+  date_col: start_date
+  min_transitions: 2
+  embedding_dim: 128
+  walk_length: 10
+  num_walks: 50
+  p: 1.0
+  q: 0.5
+  window: 5
+  min_count: 1
+  epochs: 5
+  workers: 4
+
+datasets:
+  user_profiles: ai_based_career_recommendation_system
+  careers: ai_based_career_recommendation_system
+
+columns:
+  user:
+    id: user_id
+    age: age
+    education_level: education_level
+    gpa: grades_gpa
+    interests: interests
+    skills: skills
+    past_roles: past_roles
+    years_experience: years_experience
+  career:
+    id: career_id
+    title: recommended_career
+    skills: required_skills
+    education_requirement: education_requirement
+    typical_gpa: typical_gpa
+
+outputs:
+  user_features: ml/artifacts/features/user_features.parquet
+  career_features: ml/artifacts/features/career_item_features.parquet
+  graph_embeddings: ml/artifacts/features/graph_embeddings.parquet
