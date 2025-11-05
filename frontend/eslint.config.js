@@ -19,6 +19,17 @@ export default [
         ecmaFeatures: { jsx: true }
       }
     },
+    // Assume browser runtime for TS/TSX files so DOM globals (window, document,
+    // HTMLInputElement, crypto, setTimeout, console, etc.) are recognized by
+    // ESLint and do not trigger `no-undef`.
+    env: {
+      browser: true,
+      es2021: true,
+    },
+    // Project defines some build-time globals (Vite define) like __API_BASE_URL__.
+    globals: {
+      __API_BASE_URL__: "readonly",
+    },
     plugins: {
       "@typescript-eslint": tseslint,
       "react-hooks": reactHooks,
@@ -29,6 +40,15 @@ export default [
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
       "react-refresh/only-export-components": ["warn", { allowConstantExport: true }]
+    }
+  }
+  ,
+  // Node-specific files (build config) should allow node globals like `process`.
+  {
+    files: ["vite.config.*", "**/vite.config.*"],
+    env: { node: true },
+    languageOptions: {
+      parserOptions: { sourceType: "module", ecmaVersion: "latest" }
     }
   }
 ];
